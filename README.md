@@ -40,7 +40,6 @@ Below you can find the project structure and explanations for each file
 │   │   │   ├── Doc2VecHelper.py
 │   │   │   ├── Item2VecHelper.py
 │   │   │   └── RnnHelper.py
-│   │   └── word2vec_find_similarity.model
 │   └── views.py
 ├── environment.yml
 ├── manage.py

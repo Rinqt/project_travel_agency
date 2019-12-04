@@ -1,0 +1,46 @@
+    .
+    ├── db.sqlite3
+    ├── ecommerce
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── db.sqlite3
+    │   ├── migrations
+    │   ├── models.py
+    │   ├── tasks.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   ├── utils
+    │   │   ├── helper_scripts
+    │   │   │   ├── DatabaseOperations.py
+    │   │   │   ├── __init__.py
+    │   │   │   ├── ISeqRecommender.py
+    │   │   │   ├── metrics.py
+    │   │   │   ├── pre_process.py
+    │   │   │   ├── rnn
+    │   │   │   │   ├── gpu_ops.py
+    │   │   │   │   ├── gru4rec.py
+    │   │   │   │   ├── hgru4rec.py
+    │   │   │   │   ├── __init__.py
+    │   │   │   └── Utils.py
+    │   │   ├── __init__.py
+    │   │   ├── recommendation_scripts
+    │   │   │   ├── allstuff.csv
+    │   │   │   ├── Doc2VecHelper.py
+    │   │   │   ├── __init__.py
+    │   │   │   ├── Item2VecHelper.py
+    │   │   │   └── RnnHelper.py
+    │   │   └── word2vec_find_similarity.model
+    │   └── views.py
+    ├── environment.yml
+    ├── manage.py
+    ├── static_files
+    ├── templates
+    │   ├── base.html
+    │   ├── home.html
+    │   └── item.html
+    └── travel_agency
+        ├── celery.py
+        ├── __init__.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py

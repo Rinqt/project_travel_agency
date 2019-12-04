@@ -42,11 +42,11 @@ Below there are 2 high level diagram to understand how system is working.
 
 **High Level System Diagram**
 
-![high_level_diagram](..\docs\travel_agency.assets\high_level_diagram.png)
+![high_level_diagram](../travel_agency.assets/high_level_diagram.png?raw=true)
 
 **High Level Backend Diagram**
 
-![back_end_high_level](..\travel_agency.assets\back_end_high_level.png)
+![back_end_high_level](../travel_agency.assets/back_end_high_level.png?raw=true)
 
 Shortly, the general flow of the web application is:
 

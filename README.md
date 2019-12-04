@@ -71,12 +71,12 @@ Below you can find the project structure and explanations for each file
 ## Set the environment
 ### Clone the Project
 
-Navigate to the given link below and clone the project.
+Navigate to the project located on https://github.com/Rinqt/project_travel_agency and clone it.
 
 
 ### Create Project Environment
 
-Navigate to the cloned project location.
+Navigate to the root of the project <travel_agency>.
 
 Open up a terminal window and create an environment by using the command below:
 

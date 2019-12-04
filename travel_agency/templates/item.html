@@ -1,0 +1,165 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Destination</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travel Agency">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/destinations.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/destinations_responsive.css' %}">
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<div class="logo"><a href={{ object.return_home }}>Travel Agency</a></div>
+						</div>
+					</div>
+				</div>
+                <div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<nav class="main_nav">
+								<ul class="d-flex align-content-center">
+									<li><a href={{ object.return_home }}>Home</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style="background-image:url({% static 'images/destinations.jpg' %})"></div>
+	</div>
+
+	<!-- Destination -->
+        <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+          <img src="{% static 'images/destination_1.jpg' %}" class="img-fluid" alt="">
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+          {% for key, values in destination_dictionary.items %}
+
+            <p class="lead font-weight-bold" style="color:red">Travel To {{ values.nazev_zeme|default:"No info found" }}</p>
+            <p class="lead font-weight-bold" style="color:black">{{ values.prumerna_cena|default:"Ask for a price" }} CZK</p>
+
+              <div class="destination_list">
+                <ul>
+                    <p class="lead font-weight-bold" style="color:red">{{ values.nazev|default:"No info found" }}</p>
+                    <li><b>Typ:</b> {{ values.nazev_typ|default:"No info found" }}</li>
+                    <li><b>Zeme:</b> {{ values.zeme|default:"No info found" }}</li>
+                    <li><b>Destinace:</b> {{ values.destinace|default:"No info found" }}</li>
+                    <li><b>Delka:</b> {{ values.delka|default:"No info found" }}</li>
+                    <li><b>Avg Cena Noc:</b> {{ values.prumerna_cena_noc|default:"No info found" }} CZK</li>
+                </ul>
+            </div>
+
+
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-mt-5 text-justify">
+
+          <h4 class="font-weight-bold my-4 h4 text-center">Additional information</h4>
+
+          <p>{{ values.program_zajezdu |safe|default:"No info found" }}</p>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+          {% endfor %}
+      <br>
+      <br>
+      <br>
+
+      <p class="font-weight-bold" style="color:red">We recommend:</p>
+                  <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+      {% for my_dict in object.recommend_item %}
+        {% for key, value in my_dict.items %}
+          <div class="col-lg-4 col-md-12 mb-4" style="text-align:center;">
+
+              <a href="{{ value.url }}"><img src="{% static 'images/destination_7.jpg' %}" class="img-fluid" alt=""></a>
+              <br>
+              <ul>
+                  <li><b> Nazev: </b>{{ value.nazev|default:"No info found" }} </li>
+                  <li><b> Type: </b>{{ value.nazev_typ|default:"No info found"  }} </li>
+                  <li><b> Zeme: </b>{{ value.zeme|default:"No info found"  }} </li>
+                  <li><b> Delka: </b>{{ value.delka|default:"No info found" }} </li>
+                  <li><b> Cena: </b>{{ value.prumerna_cena|default:"No info found" }} CZK</li>
+              </ul>
+          </div>
+        {% endfor %}
+      {% endfor %}
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+
+</div>
+
+
+
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/destinations.js' %}"></script>
+</body>
+</html>

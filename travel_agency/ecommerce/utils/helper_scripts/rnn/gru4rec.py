@@ -14,7 +14,6 @@ from theano import tensor as T
 from theano.sandbox.rng_mrg import MRG_RandomStreams
 
 mrng = MRG_RandomStreams()
-from ecommerce.utils.helper_scripts.rnn.gpu_ops import gpu_diag_wide
 
 
 class GRU4Rec:
